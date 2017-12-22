@@ -1,0 +1,13 @@
+{
+ 	"name": "omua/provando-composer",
+ 	"require": {
+ 		"raveren/kint": "^1.0",
+ 	 	"spipu/html2pdf": "^4.6"
+ 	},
+ 	"autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "App\\": "app/"
+        }
+    }
+ }

@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="span12">
+      <div class="widget">
+      <div class="widget-header">
+        <i class="icon-shopping-cart"></i>
+        <h3>CARRITO DE COMPRAS</h3>
+      </div> <!-- /widget-header -->
+      
+      <div class="widget-content">
+      <!--==============================================
+      =            Cntenido de manipulacion            =
+      ===============================================-->
+        <div class="messages">
+          {message}
+        </div>
+        <form method="post" action="{comprar}" class="form-horizontal">
+          <div class="control-group">                     
+            <label class="control-label"><strong>{url-dir}</strong><i class=" icon-chevron-right "></i></label>
+              <div class="controls">
+      <!--==============================================
+      =           Listado de producto                  =
+      ===============================================-->
+              <!--ListadoProducto-->
+                <table class="table table-striped table-bordered" id="table" style="display:none;">
+                        <thead>
+                          <tr>
+                            <th> Ref</th>
+                            <th> Tipo</th>
+                            <th> Nombre</th>
+                            <th> Presentacion</th>
+                            <th> Cantidad</th>
+                            <th> Precio</th>
+                            <th class="td-actions"> </th>
+                          </tr>
+                        </thead>
+                        <tfoot>
+                          <td colspan="4">
+                            <strong><label for="pago"><strong>Pago: </strong>
+                            <select name="pago" id="pago">
+                              <option value="efectivo">efectivo</option>
+                              <option value="targeta">targeta</option>
+                            </select>
+                          </td>
+                          <td><strong><label for="total_cart"><strong>TOTAL: </strong></label></strong></td>
+                          <td>
+                          <strong class="input-prepend input-append"><span class="add-on">$</span><input type="text" id="total" value="0" class="span1" name = "total_cart" disabled/> Pesos</strong>
+                          </td>
+                          <td>M/N</td>
+                        </tfoot>
+                        <tbody>
+                        <!--listProd-->
+                        {contentcart}
+                         <!--listProd-->
+                        </tbody>
+                      </table>
+                      <div class="form-actions right" >
+                        <a href="{cancelar}" class="btn"> <i class="icon-arrow-left"></i>  Agregar mas pedidos</a>
+                        <a href="{eliminar}" class="btn btn-info" {enabled_cart}> Eliminar Pedido <i class="icon-remove"></i></a>
+                        <button type="submit" class="btn btn-warning" {enabled_cart}> Hacer compra <i class="icon-shopping-cart"></i></button>
+                      </div> <!-- /form-actions -->
+       <!--=== /Listado de producto ====-->
+            </div>  <!-- /controls -->      
+         </div>
+      </form>
+      <!--====  End of Cntenido de manipulacion  ====-->
+    </div> <!-- /widget-content -->
+  </div> <!-- /widget --> 
+</div> <!-- /spa12 -->
+</div> <!-- /row -->
+{script}
+
+

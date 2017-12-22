@@ -1,0 +1,33 @@
+<h5>FOLIO. {folio}<br>Fecha de venta: {fecha}</h5>
+<h4>{titulo} <br> <small>{subtitulo}</small></h4>
+<table>
+	<thead>
+		<tr>
+			<th><h4>Cantidad</h4></th>
+			<th><h4>Concepto</h4></th>
+			<th><h4>Precio</h4></th>
+		</tr>
+	</thead>
+	<tbody>
+	<!--contenido-->
+		<tr>
+			<td>{cantidad}</td>
+			<td>{nombre}</td>
+			<td>$ {precio} PESOS M/N</td>
+		</tr>
+	<!--contenido-->
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="3">
+				===============================================
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2"><b>Total:</b></td>
+			<td><b>$ {total} Pesos M/N</b></td>
+		</tr>
+	</tfoot>
+</table>
+<p><small>Forma de pago: {pago}</small></p>
+<p>{mensaje}</p>

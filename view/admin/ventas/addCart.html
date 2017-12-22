@@ -1,0 +1,13 @@
+{cantidad}$$
+<tr>
+    <td>{id}</td>
+	<td>{tipo}</td>
+	<td>{nombre}</td>
+	<td>{presentacion}</td>
+	<td>{cantidad}</td>
+	<td>${precio_total} pesos.</td>	
+	<td>
+	<a href="{delete_cookie}{id}" class="btn btn-mini btn-danger"> ELIMINAR </a>
+	<input type="hidden" value="{precio_total}" name="{id}-{cantidad}" class="importe_linea">
+	</td>
+</tr>

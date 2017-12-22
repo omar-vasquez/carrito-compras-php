@@ -1,0 +1,99 @@
+<div class="row">
+  	<div class="span12">
+  		<div class="widget">
+			<div class="widget-header">
+				<i class=" icon-user-md "></i>
+				<h3>Control y manejo de usuarios</h3>
+			</div> <!-- /widget-header -->
+			
+			<div class="widget-content">
+			<div class="span6">
+			<!--==============================================
+			=            Cntenido de manipulacion            =
+			===============================================-->
+			<div class="messages">
+				{message}
+			</div>
+			<!--==============================================
+			=            Area de lista de usuario            =
+			===============================================-->
+			<table class="table table-striped table-bordered" id="table" style="display:none;">
+	            <thead>
+	              <tr>
+	                <th> Nombre</th>
+	                <th> Apellido</th>
+	                <th> Correo</th>
+	                <th> Acceso</th>
+	                <th class="td-actions"> </th>
+	              </tr>
+	            </thead>
+	            <tbody>
+	            <!--listuser-->
+	              <tr>
+	                <td> {name} </td>
+	                <td> {lastname}</td>
+	                <td> {email}</td>
+	                <td> {panel}</td>
+	                <td class="td-actions">
+	                <a href="{baseurl}/edituser::{id}" class="btn btn-small btn-warning">
+	               		<i class="btn-icon-only icon-ok"> </i> editar
+	                </a>
+	                <a href="{baseurl}/deleteuser::{id}" class="btn btn-danger btn-small" onclick="return confirm('realmente desea eliminar el usuario?');">
+	                	<i class="btn-icon-only icon-remove"> </i> eliminar
+	                </a>
+	                </td>
+	              </tr>
+	             <!--listuser-->
+	            </tbody>
+	          </table>
+			<!--====  End of Area de lista de usuario  ====-->
+			<!--====  End of Cntenido de manipulacion  ====-->
+		</div><!--span7-->
+		<div class="span5">
+			<!--=================================
+			=            Create user            =
+			==================================-->
+			<form action="{baseurl}/smartCreate" method="post">
+				<h2>Nueva cuenta de Usuario</h2>			
+				<div class="login-fields">
+					<p>Confirma bien tus datos:</p>
+					
+					<div class="field">
+						<label for="name">Nombre:</label>
+						<input type="text" id="name" name="name" value="" placeholder="Nombre" class="span4" required>
+					</div> <!-- /field -->
+					
+					<div class="field">
+						<label for="lastname">Apellido(s):</label>	
+						<input type="text" id="lastname" name="lastname" value="" placeholder="Apellido(s)" class="span4" required>
+					</div> <!-- /field -->
+					
+					<div class="field">
+						<label for="email">Correo:</label>
+						<input type="text" id="email" name="email" value="" placeholder="Email" class="span4" required>
+					</div> <!-- /field -->
+					
+					<div class="field">
+						<label for="password">Contraseña:</label>
+						<input type="password" id="password" name="password" value="" placeholder="Contraseña" class="span4" required>
+					</div> <!-- /field -->
+						
+					<div class="field">
+						<label for="panel">Acceso</label>
+						<select name="panel" class="span4">
+							<option value="user" selected>Vendedor</option>
+						</select>
+						<input type="hidden" name="level" value="2">
+					</div>
+				</div> <!-- /login-fields -->
+				
+				<div class="login-actions">
+					<button type="submit" name="create" value="create" class="button btn btn-primary">Crear</button>
+				</div> <!-- .actions -->
+				
+			</form>
+			<!--====  End of Create user  ====-->
+		</div>
+	</div> <!-- /widget -->	
+</div> <!-- /spa12 -->
+</div> <!-- /row -->

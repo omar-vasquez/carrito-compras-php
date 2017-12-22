@@ -1,0 +1,96 @@
+<div class="row">
+    <div class="span12">
+      <div class="widget">
+      <div class="widget-header">
+        <i class=" icon-check "></i>
+        <h3>PRODUCTO</h3>
+      </div> <!-- /widget-header -->
+      
+      <div class="widget-content">
+      <!--==============================================
+      =            Cntenido de manipulacion            =
+      ===============================================-->
+        <div class="messages">
+          {message}
+        </div>
+      <form method="get" action="" class="form-horizontal">
+         <div class="control-group">                     
+            <label class="control-label" for="radiobtns"><strong>{url-dir}producto: [{id}]<i class="icon-chevron-right"></i></strong></label>
+            <div class="controls">
+            <table class="table table-striped table-bordered" id="table" style="display:none;">
+              <thead>
+                <tr|>
+                <th>Informacion del producto</th>
+                <th colspan="2">
+                    <a href="{cancelar}" class="btn btn-mini" {editarSelect}><i class="icon-circle-arrow-left "></i> Regresar </a>
+                    <a href="{editar}" class="btn btn-mini btn-warning" {editarSelect}>editar producto <i class=" icon-ok-sign "></i></a>
+                    <a href="{editar}" class="btn btn-mini btn-danger" {editarSelect}>eliminar <i class=" icon-remove-sign "></i></a>
+                </th>
+                </tr|>
+              </thead>
+              <tbody>
+              <tr>
+                <td rowspan="6"><img src="assets/upload/res_{img_upload}" alt="img-product"></td>
+                <td><strong>Nombre: </strong></td>
+                <td>{nombre}</td>
+              </tr>
+              <tr>
+                <td><strong>Tipo: </strong></td>
+                <td>{tipo}</td>
+              </tr>
+              <tr>
+                <td><strong>Color: </strong></td>
+                <td>{color}</td>
+              </tr>
+              <tr>
+                <td><strong>Presentación: </strong></td>
+                <td>{presentacion}</td>
+              </tr>
+              <tr>
+                <td><strong>Precio: </strong></td>
+                <td> $ {precio} pesos.</td>
+              </tr>
+              <tr>
+                <td><strong>Bodega: </strong></td>
+                <td>{bodega}  Piezas.  <a href="#myModal" role="button" class="btn btn-mini btn-default" {editarSelect}  data-toggle="modal" >editar no. de piezas</a></td>
+              </tr>
+              <tr>
+                <td colspan="3">
+                  <blockquote>
+                  <strong>Descripción: </strong>
+                   {descripcion}
+                 </blockquote>
+                </td>
+              </tr>
+              </tbody>
+            </table>
+      </div>
+    </div>
+  </form>
+      <!-- Modal -->
+      <div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="myModalLabel">Editar bodega</h3>
+        </div>
+        <form action="{baseUrl}/edit::{id}" method="post">
+        <div class="modal-body">
+           <div class="control-group">                      
+              <label class="control-label" for="bodega">Nueva Cantidad</label>
+                <div class="controls">
+                  <input type="text" class="span2" id="bodega" value="{bodega}" name="bodega"><span> Piezas</span>
+                </div> <!-- /controls -->       
+              </div> <!-- /control-group -->
+           </div>
+        <div class="modal-footer">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancelar</button>
+          <button class="btn btn-primary" type="submit" name="update" value="update" onclick="return confirm('realmente desea mdodificar la bodega?');">Guardar cambios</button>
+        </div>
+        </form><!--/form-->
+      </div><!--/modal-->
+
+      <!--====  End of Cntenido de manipulacion  ====-->
+    </div> <!-- /widget-content -->
+  </div> <!-- /widget --> 
+</div> <!-- /spa12 -->
+</div> <!-- /row -->
